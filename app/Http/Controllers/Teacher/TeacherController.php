@@ -40,7 +40,7 @@ class TeacherController extends Controller
         $teacher=new Teacher();
         $teacher->teacher_name=request("teacher_name");
         $teacher->teacher_dept=request("teacher_dept");
-        $teacher->call=request("call");
+        $teacher->cell=request("cell");
         $teacher->email=request("email");
         $teacher->save();
 

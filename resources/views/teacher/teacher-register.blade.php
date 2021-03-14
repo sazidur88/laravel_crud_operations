@@ -35,7 +35,7 @@
 					</div>
 					<div class="form-group">
 						<label for="">Phone Number</label>
-						<input name="call" class="form-control" type="text">
+						<input name="cell" class="form-control" type="text">
 					</div>
 					<div class="form-group">
 						<label for="">Email</label>
