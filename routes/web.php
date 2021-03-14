@@ -35,3 +35,7 @@ Route::get('/teachers', 'Teacher\TeacherController@index');
 
 Route::get('/teacher-single/{id}','Teacher\TeacherController@show');
 
+Route::get('/teacher-edit/{id}','Teacher\TeacherController@edit');
+
+Route::post('/teacher-update/{id}','Teacher\TeacherController@update');
+

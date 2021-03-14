@@ -71,7 +71,14 @@ class TeacherController extends Controller
      */
     public function edit($id)
     {
-        //
+        $kon_teacher = Teacher::find($id);
+        
+        return view('teacher.edit', [
+            'edit_teacher' => $kon_teacher,
+            back()->with('edit_message', 'Data updated successfully')
+        ]);
+
+        //return back()->with('edit_message', 'Data updated successfully');
     }
 
     /**
@@ -83,7 +90,7 @@ class TeacherController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return $request-> all();
     }
 
     /**

@@ -39,7 +39,7 @@
 							<td>{{$teacher->email}}</td>
 							<td>
 								<a class="btn btn-sm btn-info" href="{{url('teacher-single/' . $teacher->id)}}">View</a>
-								<a class="btn btn-sm btn-warning" href="#">Edit</a>
+								<a class="btn btn-sm btn-warning" href="{{url('teacher-edit/' . $teacher->id)}}">Edit</a>
 								<a class="btn btn-sm btn-danger" href="#">Delete</a>
 							</td>
 						</tr>
