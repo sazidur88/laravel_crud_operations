@@ -15,7 +15,8 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        //
+        $teachers=Teacher::all();
+        return view('teacher.teachers', ['teachers' => $teachers]);
     }
     
 
@@ -56,7 +57,10 @@ class TeacherController extends Controller
      */
     public function show($id)
     {
-        //
+        $does_not_matter=Teacher::find($id);
+        return view('teacher.teacher-show',[
+            'ekla_teacher' =>$does_not_matter
+        ]);
     }
 
     /**

@@ -32,3 +32,6 @@ Route::get('/teacher/new', 'Teacher\TeacherController@create');
 Route::post('/teacher/store', 'Teacher\TeacherController@store');
 
 Route::get('/teachers', 'Teacher\TeacherController@index');
+
+Route::get('/teacher-single/{id}','Teacher\TeacherController@show');
+

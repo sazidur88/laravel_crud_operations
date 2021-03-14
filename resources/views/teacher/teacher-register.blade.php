@@ -5,8 +5,8 @@
 	<title>Teacher Registration</title>
 	<!-- ALL CSS FILES  -->
 	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-	<link rel="stylesheet" href="assets/css/style.css">
-	<link rel="stylesheet" href="assets/css/responsive.css">
+	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+	<link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
 </head>
 <body>
 
@@ -35,7 +35,7 @@
 					</div>
 					<div class="form-group">
 						<label for="">Phone Number</label>
-						<input name="cell" class="form-control" type="text">
+						<input name="cell" class="form-control" type="tel">
 					</div>
 					<div class="form-group">
 						<label for="">Email</label>
@@ -58,9 +58,9 @@
 
 
 	<!-- JS FILES  -->
-	<script src="assets/js/jquery-3.4.1.min.js"></script>
-	<script src="assets/js/popper.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/custom.js"></script>
+	<script src="{{ asset('assets/js/jquery-3.4.1.min.js') }}"></script>
+	<script src="{{ asset('assets/js/popper.min.js')}}"></script>
+	<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+	<script src="{{asset('assets/js/custom.js')}}"></script>
 </body>
 </html>
