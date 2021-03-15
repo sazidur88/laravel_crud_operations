@@ -74,11 +74,9 @@ class TeacherController extends Controller
         $kon_teacher = Teacher::find($id);
         
         return view('teacher.edit', [
-            'edit_teacher' => $kon_teacher,
-            back()->with('edit_message', 'Data updated successfully')
+            'edit_teacher' => $kon_teacher
         ]);
 
-        //return back()->with('edit_message', 'Data updated successfully');
     }
 
     /**
@@ -90,7 +88,18 @@ class TeacherController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return $request-> all();
+        //return $request-> all();
+        $edit_teacher  = Teacher::find($id);
+
+        //$teacher_update=new Teacher();
+        $edit_teacher -> teacher_name = $request -> teacher_name;
+        $edit_teacher -> teacher_dept = $request -> teacher_dept;
+        $edit_teacher -> cell = $request -> cell;
+        $edit_teacher -> email = $request -> email;
+
+        //echo $id;
+        return redirect() -> back() -> with('success','Student data Update successfull !');
+
     }
 
     /**
@@ -101,6 +110,8 @@ class TeacherController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete_teacher = Teacher::find($id); 
+        $delete_teacher -> delete();
+        return redirect()->route('teachers');
     }
 }

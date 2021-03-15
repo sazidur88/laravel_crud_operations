@@ -20,7 +20,7 @@
 
 	<div class="wrap-table shadow">
 	
-        <a class="btn btn-mid btn-primary" href="{{url('register')}}">Registration</a>
+	<a class="btn btn-mid btn-primary" href="{{url('/register')}}">Registration</a>
 		<div class="card">
 			<div class="card-body single">
 				<h2>{{$single -> name}}</h2>

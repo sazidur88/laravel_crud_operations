@@ -6,25 +6,29 @@
 	<!-- ALL CSS FILES  -->
 	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-	<link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
+	<link rel="stylesheet" href="{{ asset('assets/css/responsive.css')}}">
 </head>
 <body>
 
+<!-- 
 @if (session('edit_message'))
             <div class="alert alert-success text-center" role="alert">
                 {{ session('edit_message') }}
             </div>
-@endif
+@endif -->
 	
 
-	<div class="wrap shadow">
+	<div class="wrap ">
     <a class="btn btn-mid btn-primary" href="{{url('teachers')}}">All Teacher</a>
 
-		<div class="card">
+		<div class="card shadow">
 			<div class="card-body">
 				<h2>Update {{ $edit_teacher -> teacher_name}} এর Data</h2>
+				
+				@include('validation')
 				<form action="{{url ('teacher-update/' . $edit_teacher-> id) }}" method="POST">
                 @csrf
+				@method('PATCH')
 					<div class="form-group">
 						<label for="">Full Name</label>
 						<input name="teacher_name" class="form-control" value="{{ $edit_teacher -> teacher_name}}" type="text">

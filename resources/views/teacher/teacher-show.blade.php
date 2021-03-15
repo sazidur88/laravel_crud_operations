@@ -9,19 +9,21 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
     <style>
         
-        .single{
-            width:600px;
+        .single, .card{
+            max-width:700px;
+            
         }
+          
     </style>
 </head>
 <body>
 	
 	
 
-	<div class="wrap-table shadow">
+	<div class="wrap-table ">
 	
-        <a class="btn btn-mid btn-primary" href="{{url('teacher-register')}}">Registration</a>
-		<div class="card">
+        <a class="btn btn-mid btn-primary" href="{{url('teacher/new')}}">Registration</a>
+		<div class="card shadow">
 			<div class="card-body single">
 				<h2>{{$ekla_teacher -> teacher_name}}</h2>
 				<table class="table">

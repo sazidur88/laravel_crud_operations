@@ -12,10 +12,10 @@
 	
 	
 
-	<div class="wrap-table shadow">
+	<div class="wrap-table ">
 	
         <a class="btn btn-mid btn-primary" href="{{url('/teacher/new')}}">Registration</a>
-		<div class="card">
+		<div class="card shadow">
 			<div class="card-body">
 				<h2>All Data</h2>
 				<table class="table table-striped">
@@ -31,6 +31,7 @@
 						</tr>
 					</thead>
 					<tbody>
+
                     @foreach($teachers as $teacher)
 						<tr>
 							<td>{{$teacher->teacher_name}}</td>
@@ -40,7 +41,12 @@
 							<td>
 								<a class="btn btn-sm btn-info" href="{{url('teacher-single/' . $teacher->id)}}">View</a>
 								<a class="btn btn-sm btn-warning" href="{{url('teacher-edit/' . $teacher->id)}}">Edit</a>
-								<a class="btn btn-sm btn-danger" href="#">Delete</a>
+								<!-- <a class="btn btn-sm btn-danger" href="#">Delete</a> -->
+								<form style="display:inline-block" action="{{url('teacher-delete/' . $teacher->id)}}" method="post">
+									@csrf
+									@method('DELETE')
+									<button class="btn btn-sm btn-danger">Delete</button>
+								</form>
 							</td>
 						</tr>
                     @endforeach
