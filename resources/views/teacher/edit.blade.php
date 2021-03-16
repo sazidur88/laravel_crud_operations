@@ -25,8 +25,8 @@
 			<div class="card-body">
 				<h2>Update {{ $edit_teacher -> teacher_name}} এর Data</h2>
 				
-				@include('validation')
-				<form action="{{url ('teacher-update/' . $edit_teacher-> id) }}" method="POST">
+				<!-- @include('validation') -->
+				<form action="{{url ('teacher-update/' . $edit_teacher->id) }}" method="POST">
                 @csrf
 				@method('PATCH')
 					<div class="form-group">
