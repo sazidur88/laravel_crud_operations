@@ -18,6 +18,7 @@
 		<div class="card shadow">
 			<div class="card-body">
 				<h2>All Data</h2>
+				@include('validation')
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -42,9 +43,10 @@
 								<a class="btn btn-sm btn-info" href="{{url('teacher-single/' . $teacher->id)}}">View</a>
 								<a class="btn btn-sm btn-warning" href="{{url('teacher-edit/' . $teacher->id)}}">Edit</a>
 								<!-- <a class="btn btn-sm btn-danger" href="#">Delete</a> -->
+								
 								<form style="display:inline-block" action="{{url('teacher-delete/' . $teacher->id)}}" method="post">
 									@csrf
-									@method('DELETE')
+									@method('DELETE')									
 									<button class="btn btn-sm btn-danger">Delete</button>
 								</form>
 							</td>

@@ -10,11 +10,11 @@
 </head>
 <body>
 
-@if (session('message'))
+<!-- @if (session('message'))
             <div class="alert alert-success text-center" role="alert">
                 {{ session('message') }}
             </div>
-@endif
+@endif -->
 	
 
 	<div class="wrap shadow">
@@ -23,23 +23,24 @@
 		<div class="card">
 			<div class="card-body">
 				<h2>Teacher Sign Up</h2>
+				@include('validation')
 				<form action="/teacher/store" method="POST">
                 @csrf
 					<div class="form-group">
 						<label for="">Full Name</label>
-						<input name="teacher_name" class="form-control" type="text">
+						<input name="teacher_name" class="form-control" value="{{old('teacher_name')}}" type="text">
 					</div>
 					<div class="form-group">
 						<label for="">Department Name</label>
-						<input name="teacher_dept" class="form-control" type="text">
+						<input name="teacher_dept" class="form-control" value="{{old('teacher_dept')}}" type="text">
 					</div>
 					<div class="form-group">
 						<label for="">Phone Number</label>
-						<input name="cell" class="form-control" type="tel">
+						<input name="cell" class="form-control" value="{{old('cell')}}" type="tel">
 					</div>
 					<div class="form-group">
 						<label for="">Email</label>
-						<input name="email" class="form-control" type="email">
+						<input name="email" class="form-control" value="{{old('email')}}" type="email">
 					</div>
 			
 					<div class="form-group">

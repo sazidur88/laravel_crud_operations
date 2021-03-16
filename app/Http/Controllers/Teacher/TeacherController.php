@@ -45,7 +45,7 @@ class TeacherController extends Controller
         $teacher->email=request("email");
         $teacher->save();
 
-        return back()->with('message', 'Teacher registration successfull');
+        return back()->with('success', 'Teacher registration successfull');
 
     }
 
@@ -124,6 +124,7 @@ class TeacherController extends Controller
     {
         $delete_teacher = Teacher::find($id); 
         $delete_teacher -> delete();
-        return redirect()->route('teachers');
+        return redirect() -> back() -> with('success','Student data Update successfull !');
+        //return redirect()->route('teacher.teachers');
     }
 }
