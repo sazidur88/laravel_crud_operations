@@ -110,7 +110,7 @@ class TeacherController extends Controller
         $edit_teacher -> save();
 
         // //echo $id;
-        return redirect() -> back() -> with('success','Student data Update successfull !');
+        return redirect() -> back() -> with('success','Teacher data Update successfull !');
 
     }
 
@@ -124,7 +124,7 @@ class TeacherController extends Controller
     {
         $delete_teacher = Teacher::find($id); 
         $delete_teacher -> delete();
-        return redirect() -> back() -> with('success','Student data Update successfull !');
+        return redirect() -> back() -> with('success','Teacher data deleted !');
         //return redirect()->route('teacher.teachers');
     }
 }

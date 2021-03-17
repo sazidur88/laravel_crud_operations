@@ -25,8 +25,15 @@ Route::post('/store', 'StudentController@store');
 
 Route::get('/student-single/{id}','StudentController@show');
 
+Route::get('/student-edit/{id}','StudentController@edit');
 
-// Route::get('/teacher/teacher-register', 'TeacherController@create');
+Route::patch('/student-update/{id}', 'StudentController@update');
+
+Route::delete('/student-delete/{id}', 'StudentController@destroy') ;
+
+
+
+// TEACHER RELATED ROUTES     
 Route::get('/teacher/new', 'Teacher\TeacherController@create');
 
 Route::post('/teacher/store', 'Teacher\TeacherController@store');

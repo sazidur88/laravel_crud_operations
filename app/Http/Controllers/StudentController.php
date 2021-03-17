@@ -37,12 +37,19 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
+        //Validation
+        $this -> validate($request, [
+            'name' => 'required',
+            'cell' => 'required',
+            'email' => 'required',
+        ]);
+
         $student = new Student();
         $student->name=request('name');
         $student->cell=request('cell') ;
         $student->email=request('email') ;
         $student->save();
-        return back()->with('message', 'Student created successfully');
+        return back()->with('success', 'Student created successfully');
 
 
         
@@ -71,7 +78,9 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $edit_student = Student::find($id);
+
+        return view('student-edit', compact('edit_student'));
     }
 
     /**
@@ -83,7 +92,15 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $edit_student = Student::find($id);
+
+        $edit_student -> name = $request -> name; 
+        $edit_student -> cell = $request -> cell; 
+        $edit_student -> email = $request -> email; 
+
+        $edit_student -> save();
+
+        return redirect() -> back() -> with('success','Student data Update successfull !');
     }
 
     /**
@@ -94,6 +111,9 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete_student = Student::find($id);
+        $delete_student -> delete();
+        //return redirect() -> back() -> with('success','Student data deleted !');
+        return redirect() ->route('index');
     }
 }

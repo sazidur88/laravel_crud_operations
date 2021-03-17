@@ -9,32 +9,31 @@
 	<link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
-@if (session('message'))
-            <div class="alert alert-success text-center" role="alert">
-                {{ session('message') }}
-            </div>
-@endif
+
+
 	
 
-	<div class="wrap shadow">
+	<div class="wrap ">
     <a class="btn btn-mid btn-primary" href="{{url('students')}}">All Students</a>
 
-		<div class="card">
+		<div class="card shadow">
 			<div class="card-body">
 				<h2>Sign Up</h2>
+				
+				@include('validation')
 				<form action="/store" method="POST">
                 @csrf
 					<div class="form-group">
 						<label for="">Full Name</label>
-						<input name="name" class="form-control" type="text">
+						<input name="name" class="form-control" type="text" value="{{old('name')}}">
 					</div>
 					<div class="form-group">
 						<label for="">Phone Number</label>
-						<input name="cell" class="form-control" type="text">
+						<input name="cell" class="form-control" type="text" value="{{old('cell')}}">
 					</div>
 					<div class="form-group">
 						<label for="">Email</label>
-						<input name="email" class="form-control" type="text">
+						<input name="email" class="form-control" type="text" value="{{old('email')}}">
 					</div>
 			
 					<div class="form-group">

@@ -25,6 +25,8 @@
         <a class="btn btn-mid btn-primary" href="{{url('teacher/new')}}">Registration</a>
 		<div class="card shadow">
 			<div class="card-body single">
+            
+            <!-- $ekla_teacher Comes from || public function show($id) || -->
 				<h2>{{$ekla_teacher -> teacher_name}}</h2>
 				<table class="table">
                     <tr>

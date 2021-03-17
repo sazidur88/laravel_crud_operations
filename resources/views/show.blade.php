@@ -9,8 +9,8 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
     <style>
         
-        .single{
-            width:600px;
+        .single, .card{
+            width:700px;
         }
     </style>
 </head>
@@ -18,10 +18,10 @@
 	
 	
 
-	<div class="wrap-table shadow">
+	<div class="wrap-table ">
 	
 	<a class="btn btn-mid btn-primary" href="{{url('/register')}}">Registration</a>
-		<div class="card">
+		<div class="card shadow">
 			<div class="card-body single">
 				<h2>{{$single -> name}}</h2>
 				<table class="table">

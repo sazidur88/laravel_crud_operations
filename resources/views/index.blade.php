@@ -4,18 +4,18 @@
 	<meta charset="UTF-8">
 	<title>Development Area</title>
 	<!-- ALL CSS FILES  -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/style.css">
-	<link rel="stylesheet" href="assets/css/responsive.css">
+	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/responsive.css')}}">
 </head>
 <body>
 	
 	
 
-	<div class="wrap-table shadow">
+	<div class="wrap-table ">
 	
         <a class="btn btn-mid btn-primary" href="{{url('register')}}">Registration</a>
-		<div class="card">
+		<div class="card shadow">
 			<div class="card-body">
 				<h2>All Data</h2>
 				<table class="table table-striped">
@@ -37,8 +37,15 @@
 							<td>{{$student->email}}</td>
 							<td>
 								<a class="btn btn-sm btn-info" href="{{url('student-single/' . $student->id)}}">View</a>
-								<a class="btn btn-sm btn-warning" href="#">Edit</a>
-								<a class="btn btn-sm btn-danger" href="#">Delete</a>
+								<a class="btn btn-sm btn-warning" href="{{url('student-edit/' . $student->id)}}">Edit</a>
+								<!-- <a class="btn btn-sm btn-danger" href="{{url('student-delete/' . $student->id)}}">Edit</a> -->
+								
+								
+								<form style="display: inline-block" action="{{url('student-delete/' . $student->id)}}">
+								@csrf
+								@method('DELETE')
+									<button class="btn btn-sm btn-danger" >Delete</button>
+								</form>
 							</td>
 						</tr>
                     @endforeach

@@ -33,6 +33,7 @@
 					</thead>
 					<tbody>
 
+					<!-- $teachers comes from ||    public function index() ||  -->
                     @foreach($teachers as $teacher)
 						<tr>
 							<td>{{$teacher->teacher_name}}</td>
