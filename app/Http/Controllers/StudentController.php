@@ -41,9 +41,14 @@ class StudentController extends Controller
         $this -> validate($request, [
             'name' => 'required',
             'cell' => 'required',
-            'email' => 'required',
+            'email' => 'required  | unique:students',
+        ],[
+            'name.required' => 'Name is required',
+            'cell.required' => 'Number is required',
+            'email.required' => 'Email is required',
         ]);
 
+        //Data sent to database
         $student = new Student();
         $student->name=request('name');
         $student->cell=request('cell') ;
@@ -92,12 +97,21 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this -> validate($request, [
+            'name' => 'required',
+            'cell' => 'required',
+            'email' => 'required  | unique:students',
+        ],[
+            'name.required' => 'Name is required',
+            'cell.required' => 'Number is required',
+            'email.required' => 'Email is required',
+        ]);
+
         $edit_student = Student::find($id);
 
         $edit_student -> name = $request -> name; 
         $edit_student -> cell = $request -> cell; 
         $edit_student -> email = $request -> email; 
-
         $edit_student -> save();
 
         return redirect() -> back() -> with('success','Student data Update successfull !');
